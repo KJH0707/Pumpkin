@@ -9,7 +9,7 @@ class Main {
         String a = st.nextToken();
         int jin = Integer.parseInt(st.nextToken());
         int total = 0;
-        int b=0;
+        int b=1;
         for (int i=a.length()-1;i>=0;i--) {
             int n = a.charAt(i);
 
@@ -20,16 +20,9 @@ class Main {
                 n-=55;
             }
 
-            total+=n*jegop(jin,b);
-            b++;
+            total+=n*b;
+            b*=jin;
         }
         System.out.println(total);
-    }
-   static int jegop(int num, int time) {
-        int a = 1;
-        for(int i=0;i<time;i++) {
-            a*=num;
-        }
-        return a;
     }
 }
