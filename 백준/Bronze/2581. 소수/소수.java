@@ -17,10 +17,10 @@ public class Main{
 
         for (int i=a;i<=b;i++) {
             int cnt = 0;
-            for (int j=1;j<=i;j++) {
+            for (int j=2;j<=i;j++) {
                 if (i%j==0) cnt++;
             }
-            if (cnt==2) {
+            if (cnt==1) {
                 total+=i;
                 if(min>i) min=i;
             }
