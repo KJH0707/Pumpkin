@@ -1,25 +1,13 @@
 class Solution {
     public int solution(int n, int m, int[] section) {
-        int answer = 0;
-        boolean[] wall = new boolean[n];
-
-        for(int i=0;i<section.length;i++) {
-            wall[section[i]-1] = true;
-        }
-
-        for (int i=0;i<wall.length;i++) {
-            boolean a = wall[i];
-
-            if(a) {
-                for(int j=i;j<i+m;j++) {
-                    if(j>wall.length-1) break;
-
-                    wall[j]=false;
-                }
-                answer++;
+        int roller = section[0];
+        int cnt = 1;
+        for(int i = 1; i < section.length; i++) {
+            if(roller + m - 1 < section[i]) {
+                cnt++;
+                roller = section[i];
             }
         }
-
-        return answer;
+        return cnt;
     }
 }
