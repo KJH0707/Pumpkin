@@ -4,10 +4,8 @@ class Solution {
     public int[] solution(String[] keymap, String[] targets) {
         Map<Character,Integer> map = new HashMap<Character,Integer>();
         int[] answer = new int[targets.length];
-        for (int i=0;i<keymap.length;i++) {
-            String a = keymap[i];
+        for (String a : keymap) {
             for (int j=0;j<a.length();j++) {
-
                 if(map.get(a.charAt(j))==null) map.put(a.charAt(j), j + 1);
                 else {
                     if (map.get(a.charAt(j)) > j + 1) {
